@@ -4,7 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e3ffb51-243d-48cd-a0b4-09d9ae7e3fa0" name="Default Changelist" comment="" />
+    <list default="true" id="6e3ffb51-243d-48cd-a0b4-09d9ae7e3fa0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/crud.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Skill.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/SkillRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/skills.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Skill.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/SkillRepository$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/SkillRepository$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/SkillRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/skills.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +35,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
       <filtered-out-file-type name="LOCAL_BRANCH" />
@@ -26,6 +47,7 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="1wot8rbysbDZ3PnxZ9AjQKE3UVi" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="autoscrollToSource" value="true" />
@@ -68,6 +90,17 @@
       <updated>1629136613900</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
