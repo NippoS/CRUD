@@ -4,14 +4,7 @@ public class Skill {
 
     public Skill(Long id, String name) {
         this.name = name;
-        if (id==null){
-            SkillRepository sR = new SkillRepository();
-            int x = sR.getId();
-            Long y = new Long(x);
-            this.id = y;
-        }
-        else
-            this.id = id;
+        this.id = id;
     }
 
     public Skill() {

@@ -6,10 +6,11 @@ import java.io.*;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 public class SkillRepository {
-
+    private static final String SKILLS_JSON = "skills.json";
     private final String path = "src\\main\\resources\\";
 
     public Skill getById(Long id) {
@@ -22,24 +23,27 @@ public class SkillRepository {
         return readJSON();
     }
 
-    public void save(Skill skill) {
-        writeFile("skills.json", toJSON(addSkill(readJSON(), skill)));
+    public Skill save(Skill skill) {
+        if (skill.getId() == null) {
+            skill.setId(1L);
+            getId(skill);
+        }
+        writeFile(SKILLS_JSON, toJSON(addSkill(readJSON(), skill)));
+        return readJSON().stream().filter(n -> n.getName().equals(skill.getName())).findFirst().orElse(null);
     }
 
-    public void update(Skill skill) {
-        writeFile("skills.json", toJSON(changeSkill(readJSON(), skill)));
+    public Skill update(Skill skill) {
+        writeFile(SKILLS_JSON, toJSON(changeSkill(readJSON(), skill)));
+        return readJSON().stream().filter(n -> n.getName().equals(skill.getName())).findFirst().orElse(null);
     }
 
-    public void deleteById(Long id){
-        writeFile("skills.json", toJSON(deleteSkill(readJSON(), id)));
+    public void deleteById(Long id) {
+        writeFile(SKILLS_JSON, toJSON(readJSON().stream().filter(n -> !(n.getId().equals(id))).collect(Collectors.toList())));
     }
-
-
-
 
 
     //      Читает файл (ПОЛНОСТЬЮ)
-    public String readFile(String fileName) {
+    private String readFile(String fileName) {
         String fileContent = "";
         try (FileReader fr = new FileReader(getPath(fileName))) {
             while (fr.ready()) {
@@ -53,7 +57,7 @@ public class SkillRepository {
     }
 
     //        Записывает файл (ПОЛНОСТЬЮ)
-    public void writeFile(String fileName, String jsonObj) {
+    private void writeFile(String fileName, String jsonObj) {
         try (FileWriter fw = new FileWriter(getPath(fileName))) {
             fw.write(jsonObj);
         } catch (IOException e) {
@@ -86,16 +90,13 @@ public class SkillRepository {
         return list;
     }
 
-    private List<Skill> deleteSkill(List<Skill> list, Long id){
-        list.remove(id.intValue()-1);
-        return list;
-    }
-
-    public int getId() {
-        Type targetClassType = new TypeToken<ArrayList<Skill>>() {
-        }.getType();
-        List<Skill> targetCollection = new Gson().fromJson(readFile("skills.json"), targetClassType);
-        return targetCollection.size() + 1;
+    // Определение Id
+    private Skill getId(Skill skill) {
+        if (idCopy(readJSON(), skill) != 0) {
+            skill.setId(skill.getId() + 1);
+            getId(skill);
+        }
+        return skill;
     }
 
     //    Проверка совпадения id у skill
@@ -110,7 +111,7 @@ public class SkillRepository {
     }
 
     // Чтение файла
-    public List<Skill> readJSON() {
+    private List<Skill> readJSON() {
         Type targetClassType = new TypeToken<ArrayList<Skill>>() {
         }.getType();
         List<Skill> targetCollection = new Gson().fromJson(readFile("skills.json"), targetClassType);
