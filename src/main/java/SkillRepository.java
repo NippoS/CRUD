@@ -114,7 +114,7 @@ public class SkillRepository {
     private List<Skill> readJSON() {
         Type targetClassType = new TypeToken<ArrayList<Skill>>() {
         }.getType();
-        List<Skill> targetCollection = new Gson().fromJson(readFile("skills.json"), targetClassType);
+        List<Skill> targetCollection = new Gson().fromJson(readFile(SKILLS_JSON), targetClassType);
         return targetCollection;
     }
 }
