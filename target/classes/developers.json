@@ -1,3 +1,12 @@
 [
-
+  {
+    "id": 1,
+    "firstName": "python",
+    "lastName": "c++"
+  },
+  {
+    "id": 2,
+    "firstName": "python",
+    "lastName": "c++"
+  }
 ]
