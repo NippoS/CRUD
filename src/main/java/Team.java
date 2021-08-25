@@ -4,6 +4,7 @@ public class Team {
     private Long id;
     private String name;
     private List<Developer> developers;
+    private TeamStatus teamStatus;
 
     public Team(Long id, String name, List<Developer> developers) {
         this.id = id;
