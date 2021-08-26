@@ -1,6 +1,7 @@
 package CRUD.repository;
 
 import CRUD.model.Developer;
+import CRUD.model.Skill;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -10,6 +11,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -99,9 +101,6 @@ public class DeveloperRepository {
     }
 
     private Long generateMaxId(List<Developer> list) {
-        if (list.size() == 0){
-            return 1L;
-        }
-        return list.get(list.size() - 1).getId() + 1;
+        return list.stream().max(Comparator.comparing(Developer::getId)).get().getId()+1;
     }
 }

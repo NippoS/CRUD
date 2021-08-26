@@ -10,7 +10,7 @@ public class main {
         testAll();
     }
 
-    public static void testAll(){
+    public static void testAll() {
         skillTest();
         devTest();
         teamTest();
@@ -28,6 +28,7 @@ public class main {
         sR.deleteById(3L);
         System.out.println("Удаление: " + sR.getAll());
     }
+
     public static void devTest() {
         System.out.println("DEV:");
         DeveloperRepository dR = new DeveloperRepository();
@@ -35,11 +36,12 @@ public class main {
         System.out.println("Полный список: " + dR.getAll());
         System.out.println("New Dev: " + dR.save(new Developer(null, "python", "c++", null)));
         System.out.println("Добавление: " + dR.getAll());
-        System.out.println("Update Dev: " + dR.update(new Developer(3L, "python3","c++3", null )));
+        System.out.println("Update Dev: " + dR.update(new Developer(3L, "python3", "c++3", null)));
         System.out.println("Изменение: " + dR.getAll());
         dR.deleteById(3L);
         System.out.println("Удаление: " + dR.getAll());
     }
+
     public static void teamTest() {
         System.out.println("TEAM:");
         TeamRepository tR = new TeamRepository();
